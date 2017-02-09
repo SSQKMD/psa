@@ -24,10 +24,17 @@ namespace PhotoSharingApplication
             );
 
             config.Routes.MapHttpRoute(
-                name: "PhotosApi",
-                routeTemplate: "api/photos",
-                defaults: new { controller = "PhotoApi", action = "GetAllPhotos", id = RouteParameter.Optional }
+                name: "FirstApi",
+                routeTemplate: "api/first",
+                defaults: new { controller = "First", action = "GetAllPhotos", id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+               name: "PhotosApi",
+               routeTemplate: "api/photos",
+               defaults: new { controller = "PhotoApi", action = "GetAllPhotos", id= RouteParameter.Optional }
+           );
+
 
             //Configure formatters.
             var json = config.Formatters.JsonFormatter; 
